@@ -36,7 +36,7 @@ int main() {
                 cout << "Too Low" << endl;
                 cout << "Try Again" << endl;
             }
-            else if (guess = secretNumber) {
+            else if (guess == secretNumber) {
                 break;
             }
             else {
@@ -54,7 +54,7 @@ int main() {
         cout << "Number of tries: " << attempts << endl;
     
     }
-    else if (guess = secretNumber){
+    else if (guess == secretNumber){
         cout << "You guessed it correctly!" << endl;
         cout << "Number of tries: " << attempts << endl;
     
