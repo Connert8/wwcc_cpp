@@ -5,11 +5,8 @@
 #include <string>
 using namespace std;
 
-
-
 // Function prototype
 void convertTemperature(char &, double &);
-//Make it take ckf
 
 // Function definition
 void convertTemperature(char &temunit, double &tempn) {
