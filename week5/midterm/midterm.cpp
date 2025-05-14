@@ -53,22 +53,18 @@ void inputTasks(vector<Task> &taskList) {
         cout << "\nWhat is the priority level? (1-10)";
         cin >> taskList[count].priority;
 
-        cout << "\nWhat is the due date of the task? (type in order -> day, month, year): ";
+        cout << "\nWhat is the due date of the task? (day): ";
         cin >> taskList[count].dueDate.day;
+        cout << "\n(Month)";
         cin >> taskList[count].dueDate.month;
+        cout << "\n(Year)";
         cin >> taskList[count].dueDate.year;
 
         cout << "\nIs this task completed? (0 for no/1 for yes): ";
         cin >> taskList[count].completed;
 
         
-        cout << taskList[count].title << endl;
-        cout << taskList[count].description << endl;
-        cout << taskList[count].priority << endl;
-        cout << taskList[count].dueDate.day << endl;
-        cout << taskList[count].dueDate.month << endl;
-        cout << taskList[count].dueDate.year << endl;
-        cout << taskList[count].completed << endl;
+        cout << " -- Task Entered -- " << endl;
 
         count += 1;
         cout << "\nWould you like to input another task? (0 to stop/1 to continue)" << endl;
@@ -105,16 +101,26 @@ void sampleTaskList(vector<Task> &taskList){
 
 //Display function for all tasks
 void displayTasks(vector<Task> vec){
+    cout << "=====---------------=====" << endl;
     for (int i = 0; i < vec.size(); i++) {
-        cout << vec[i].title << endl;
-        cout << vec[i].description << endl;
-        cout << vec[i].priority << endl;
-        cout << vec[i].dueDate.day << endl;
-        cout << vec[i].dueDate.month << endl;
-        cout << vec[i].dueDate.year << endl;
-        cout << vec[i].completed << endl;
+        cout << "Title: " << vec[i].title << endl;
+        cout << "Description: " << vec[i].description << endl;
+        cout << "Priority Level (1-10): " << vec[i].priority << endl;
+        cout << "Date (day/month/year): ";
+        cout << "(" << vec[i].dueDate.day << "/"
+        << vec[i].dueDate.month << "/"
+        << vec[i].dueDate.year << ")" << endl;
+    
+        if (vec[i].completed == 1) {
+            cout << "Complete" << endl;
+        } 
+        else if (vec[i].completed == 0) {
+            cout << "Incomplete" << endl;
+        }
+
+        cout << "=====---------------=====" << endl;
     }
-    printf(" ");
+
     return;
 }
 
@@ -162,31 +168,8 @@ int main (){
     int choice;
     
     cout << " --- Welcome to the Task Manager system ---" << endl;
-    cout << "Would you like to write or read taks data? (1 to write/0 to read)" << endl;
+    cout << "Would you like to write or read task data? (type -1- to write or -0- to read)" << endl;
     cin >> choice;
-    if (choice == 1) {
-        cout << "-This program will continue until you stop it- \n - (Enter 0 to stop at prompt) - " << endl;
-        cin.ignore();
-        inputTasks(taskList); 
-    }
-    else if (choice == 0) {
-        taskList.push_back(
-            {   "Sample Title", 
-                "Sample Description", 
-                5,
-                {24, 4, 2025},
-                true
-        });
-        displayTasks(taskList);
-    }
-    else {
-        cout << "Error in Input" << endl;
-    }
-
-    cout << " - What next? - " << endl;
-    cout << "-(0 to read/1 to write/2 to exit)-" << endl;
-    cin >> choice;
-
     if (choice == 1) {
         cout << "-This program will continue until you stop it- \n - (Enter 0 to stop at prompt) - " << endl;
         cin.ignore();
@@ -197,7 +180,24 @@ int main (){
         displayTasks(taskList);
     }
     else {
+        cout << "Error in Input" << endl;
+    }
+
+    cout << " - What next? - " << endl;
+    cout << "-(1 to write/0 to read/2 to exit)-" << endl;
+    cin >> choice;
+
+    if (choice == 1) {
+        cout << "-This program will continue until you stop it-" << endl;
+        cin.ignore();
+        inputTasks(taskList); 
+    }
+    else if (choice == 0) {
+        displayTasks(taskList);
+    }
+    else {
         cout << "User exited program." << endl;
+        return 0;
     }
 
     cin.ignore();
@@ -210,19 +210,30 @@ int main (){
         sort(taskList.begin(), taskList.end(), taskByPriority);
         displayTasks(taskList);
 
+        cout << "--------------------------------" << endl;
+
         cout << "Sorted by date (day): " << endl;
         sort(taskList.begin(), taskList.end(), taskByDueDate);
         displayTasks(taskList);
+
+        cout << "--------------------------------" << endl;
     
         cout << "Sorted by completion status (completed first/incomplete last):" << endl;
         sort(taskList.begin(), taskList.end(), tasksByStatus);
         displayTasks(taskList);
+
+        cout << "--------------------------------" << endl;
+
+
+        cout << "End of Program" << endl;
 
     }
 
     else if (toupper(choicer) == 'Y') {
     cout << "Productivity Report: " << endl;
     productivityGenerator(taskList);
+
+    cout << "End of Program" << endl;
     }
 
     else {
