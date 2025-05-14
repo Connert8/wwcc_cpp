@@ -41,6 +41,7 @@ void inputTasks(vector<Task> &taskList) {
     int count = 0;
     string temp;
     //While user wants to add tasks, continue prompting
+    //Goes through every element in the Task struct
     while (lchoice == 1){
         taskList.push_back ({});
 
@@ -156,6 +157,7 @@ bool tasksByStatus(const Task &e, const Task &f) {
 void productivityGenerator(vector<Task> tasks) {
     printf("%-10s | %5s | %8s\n", "Task Title", "Due Date", "Completed (1 is yes/0 is no)");
     for (int i = 0; i < tasks.size(); i++) {
+        //I'm unable to get the first pointer to return the correct title string
         printf("%-10p | %5p | %8p\n", tasks[i].title, tasks[i].dueDate.day, tasks[i].completed);
     }
     return;
@@ -166,7 +168,8 @@ void productivityGenerator(vector<Task> tasks) {
 int main (){
     vector<Task> taskList;
     int choice;
-    
+
+    //Beginning of program, first prompt of read or write
     cout << " --- Welcome to the Task Manager system ---" << endl;
     cout << "Would you like to write or read task data? (type -1- to write or -0- to read)" << endl;
     cin >> choice;
@@ -183,8 +186,9 @@ int main (){
         cout << "Error in Input" << endl;
     }
 
+    //Next, read/write/continue
     cout << " - What next? - " << endl;
-    cout << "-(1 to write/0 to read/2 to exit)-" << endl;
+    cout << "-(1 to write/0 to read/2 to continue)-" << endl;
     cin >> choice;
 
     if (choice == 1) {
@@ -196,12 +200,13 @@ int main (){
         displayTasks(taskList);
     }
     else {
-        cout << "User exited program." << endl;
-        return 0;
+        cout << endl;
     }
 
     cin.ignore();
     char choicer;
+
+    //Asking for the final action, sort/report/exit
     cout << "Would you like to sort tasks or generate a report? (s for sort | y for report | n for exit)" << endl;
     cin >> choicer;
 
@@ -238,10 +243,15 @@ int main (){
 
     else {
         cout << "-- User exited program --" << endl;
+        cout << "-- End of Program --" << endl;
     }
 
     return 0;
 
 }
 
+
+/*
+In the future, I'd like to add a better user interface.
+*/
 
