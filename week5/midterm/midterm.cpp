@@ -51,8 +51,10 @@ void inputTasks(vector<Task> &taskList) {
         cout << "\nWhat is the description of the task? ";
         getline(cin, taskList[count].description);
 
+        //Here, I had troubles making cin.ignore() work
         cout << "\nWhat is the priority level? (1-10)";
         cin >> taskList[count].priority;
+        //Would like to add an error catch of entering anything besides an integer type.
 
         cout << "\nWhat is the due date of the task? (day): ";
         cin >> taskList[count].dueDate.day;
@@ -157,8 +159,7 @@ bool tasksByStatus(const Task &e, const Task &f) {
 void productivityGenerator(vector<Task> tasks) {
     printf("%-10s | %5s | %8s\n", "Task Title", "Due Date", "Completed (1 is yes/0 is no)");
     for (int i = 0; i < tasks.size(); i++) {
-        //I'm unable to get the first pointer to return the correct title string
-        printf("%-10p | %5p | %8p\n", tasks[i].title, tasks[i].dueDate.day, tasks[i].completed);
+        printf("%-10s | %5d | %8d\n", tasks[i].title.c_str(), tasks[i].dueDate.day, tasks[i].completed);
     }
     return;
 }
@@ -171,7 +172,7 @@ int main (){
 
     //Beginning of program, first prompt of read or write
     cout << " --- Welcome to the Task Manager system ---" << endl;
-    cout << "Would you like to write or read task data? (type -1- to write or -0- to read)" << endl;
+    cout << "Would you like to write or read sample task data? (type -1- to write or -0- to read)" << endl;
     cin >> choice;
     if (choice == 1) {
         cout << "-This program will continue until you stop it- \n - (Enter 0 to stop at prompt) - " << endl;
@@ -235,10 +236,10 @@ int main (){
     }
 
     else if (toupper(choicer) == 'Y') {
-    cout << "Productivity Report: " << endl;
-    productivityGenerator(taskList);
+        cout << "Productivity Report: " << endl;
+        productivityGenerator(taskList);
 
-    cout << "End of Program" << endl;
+        cout << "End of Program" << endl;
     }
 
     else {
