@@ -1,0 +1,8 @@
+ID      Name               Courses Taken    GPA
+-----   ----------------   -------------    ----
+12345   Alice Johnson      5                3.65
+23456   Bob Smith          4                2.33
+34567   Charlie Brown      3                3.40
+45678   Dana White         2                1.67
+56789   Eve Davis          1                3.93
+
