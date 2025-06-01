@@ -1,0 +1,9 @@
+
+Product              Category         Units Sold   Unit Price   Total Revenue
+--------------------  ---------------  -----------  -----------  -------------
+Laptop               Electronics               5       899.99       4499.95
+Mouse                Electronics              25        29.99        749.75
+Monitor              Electronics               3       299.99        899.97
+Keyboard             Electronics              12        79.99        959.88
+Notebook             Stationery              100         4.99        499.00
+Pen                  Stationery              200         1.99        398.00
