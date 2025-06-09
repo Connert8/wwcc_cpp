@@ -552,10 +552,10 @@ public:
 //user menu
 int displayMenu() {
     cout << "\n======== RESTAURANT SYSTEM ========\n";
-    cout << "1. View Menu\n"; // by category
+    cout << "1. View Menu\n";
     cout << "2. Place New Order\n";
     cout << "3. View Order Status\n";
-    cout << "4. Update Order\n"; // not while prep
+    cout << "4. Update Order\n";
     cout << "5. Kitchen View (pending/preparing orders)\n"; 
     cout << "6. Inventory Status\n"; 
     cout << "7. Exit\n";
