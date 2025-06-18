@@ -1,0 +1,82 @@
+# name|description
+A Mysterious Room|You wake in an old room. Cobwebs coat the corners of the room and tops of doorways. You see doors surrounding you; and sword lays sharp near your feet.
+A Small Closet|This closet barely holds anything. A shield hangs on the wall, though it seems it won't stay there long.
+The Library|The room is lined with bookshelves. Books of all shapes and colors seem to have been left here to collect dust it seems.
+The Hallroom|The ceiling is decorated with muted paint and the walls are filled with old looking portraits.
+The Courtyard|There's a dirt path surrounding a large old tree. It seems to have lost it's leaves a long while ago.
+Storage Room|This room is packed with shelves. Though it's so disorganized, the items are impossible to distinguish.
+The Arena|A massive clearing opens with tall walls and seats surrounding you. There is only one path forward.
+The Royal Hall|A red velvet carpet lines the walkway ahead. Purple banners hang from the wall. And there seems to be a strange small door.
+Secret Room|The room is bigger than you expected, full of monsters, and a strange chest sits in the back of the room.
+Throne Room|A large throne carved from wood and adorned with gold is placed in the middle of this room. Behind it, seems to be daylight.
+The Knights Hall|This hall is full of weapons and armor, though each item is rusted and well used.
+The Barracks|Beds line the walls leaving very little room to move. 
+The Royal Quarters|A large bed sits in the center of the room. There was once a veil of curtains, but they seem to have become one with the bed.
+The Connector Hall|This hall connects the bedroom wing of this place.
+The Bathroom|There's almost nothing here, just a wash basin. There's a book on the ground.
+The Bedroom|This bedroom hasn't been touched. The bed is absent of sheets or any sense of use. Though a journal lays at the foot of it. There's a small door in the corner.
+The Hidden Room|Uncovering this room leads to more cobwebs. Though they've completely buried a small key in a mountain of webbing. 
+
+# exits: from|direction|to
+A Mysterious Room|north|The Library
+A Mysterious Room|south|A Small Closet
+A Mysterious Room|east|The Hallroom
+The Library|south|A Mysterious Room
+A Small Closet|north|A Mysterious Room
+The Hallroom|north|Storage Room
+The Hallroom|south|The Courtyard
+The Hallroom|east|The Arena
+The Hallroom|west|A Mysterious Room
+Storage Room|south|The Hallroom
+The Courtyard|north|The Hallroom
+The Courtyard|east|The Knights Hall
+The Courtyard|south|The Connector Hall
+The Knights Hall|west|The Connector Hall
+The Knights Hall|east|The Barracks
+The Barracks|east|The Royal Quarters
+The Barracks|west|The Knights Hall
+The Royal Quarters|west|The Barracks
+The Connector Hall|north|The Courtyard
+The Connector Hall|west|The Bathroom
+The Connector Hall|east|The Bedroom
+The Bathroom|east|The Connector Hall
+The Bedroom|west|The Connector Hall
+The Bedroom|east|The Hidden Room
+The Hidden Room|west|The Bedroom
+The Arena|west|The Hallroom
+The Arena|east|The Royal Hall
+The Royal Hall|north|Secret Room
+The Royal Hall|east|Throne Room
+The Royal Hall|west|The Arena
+Secret Room|south|The Royal Hall
+Throne Room|west|The Royal Hall
+The Way Home|west|Throne Room
+Throne Room|east|The Way Home
+
+
+# locked: from|direction|required_key
+A Mysterious Room|east|old_key
+The Hallroom|east|arena_key
+The Royal Hall|north|secret_key
+
+# items: room|item
+A Mysterious Room|sword
+A Small Closet|shield
+The Library|old_key
+Storage Room|broken_key
+The Barracks|health_potion
+The Royal Quarters|arena_key
+Secret Room|gun
+The Hidden Room|secret_key
+The Bedroom|journal
+The Bathroom|book
+
+# enemies: room|amount
+Storage Room|2
+The Hallroom|1
+The Courtyard|3
+The Barracks|2
+The Royal Hall|4
+Secret Room|6
+Throne Room|1
+
